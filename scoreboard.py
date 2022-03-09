@@ -21,4 +21,4 @@ class Scoreboard():
         self.score_image_rect.top = 20
 
     def draw_score(self):
-        self.screen.blit(self.score_image, self.score_image_rect)ct)
+        self.screen.blit(self.score_image, self.score_image_rect)
