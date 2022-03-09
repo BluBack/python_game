@@ -167,3 +167,4 @@ def ship_hit(game_settings, stats, screen, ship, aliens, bullets):
         stats.game_active = False
         pygame.mouse.set_visible(True)
 
+

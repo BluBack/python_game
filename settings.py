@@ -34,4 +34,4 @@ class Settings:
     def increase_speed(self):
         self.ship_speed_factor *= self.speedup_scale
         self.bullet_speed_factor *= self.speedup_scale
-        self.alien_speed_factor *= self.speedup_scale
+        self.alien_speed_factor *= self.speedup_scalepeedup_scale

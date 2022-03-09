@@ -1,30 +1,25 @@
 import pygame
 from pygame.sprite import Sprite
 
-class Alien(Sprite):
-    """Class for alien description"""
-    def __init__(self, game_settings, screen):
-        """Create alien object and define its start position"""
+class Bullet(Sprite):
+    """Bullet control class"""
+    def __init__(self, game_setting, screen, ship):
+        """Create bullet object at ship position"""
         super().__init__()
         self.screen = screen
-        self.game_settings = game_settings
-        # load alien image and set rect atribute
-        self.image = pygame.image.load("images/alien.bmp")
-        self.rect = self.image.get_rect()
-        self.rect.x = self.rect.width
-        self.rect.y = self.rect.height
-        # set alien position
-        self.x = float(self.rect.x)
-    def blitme(self):
-        """Draw alien at his position"""
-        self.screen.blit(self.image, self.rect)
+        # create bullet
+        self.rect = pygame.Rect(0, 0, game_setting.bullet_width, game_setting.bullet_height)
+        self.rect.centerx = ship.rect.centerx
+        self.rect.top = ship.rect.top
+        # bullet position
+        self.y = float(self.rect.y)
+        # bullet settings
+        self.color = game_setting.bullet_color
+        self.speed_factor = game_setting.bullet_speed_factor
     def update(self):
-        """Update alien position to right or left"""
-        self.x += self.game_settings.alien_speed_factor * self.game_settings.fleet_direction
-        self.rect.x = self.x
-    def check_edges(self):
-        screen_rect = self.screen.get_rect()
-        if self.rect.right >= screen_rect.right:
-            return True
-        elif self.rect.left <= 0:
-            return True
+        """Update bullet position"""
+        self.y -= self.speed_factor
+        self.rect.y = self.y
+    def draw_bullet(self):
+        """Draw bullet at screen"""
+        pygame.draw.rect(self.screen, self.color, self.rect)
