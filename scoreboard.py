@@ -7,7 +7,7 @@ class Scoreboard():
         self.game_settings = game_settings
         self.stats = stats
         # score atributes - size, color, font
-        self.text_color = (25, 25, 25)
+        self.text_color = (255, 255, 255)
         self.font = pygame.font.SysFont(None, 46)
         # prepare grafical score
         self.prepare_score()
