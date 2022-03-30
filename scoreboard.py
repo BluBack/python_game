@@ -1,19 +1,19 @@
 import pygame.font
 class Scoreboard():
     def __init__(self, game_settings, screen, stats):
-        """Init scoreboard atributes"""
+        """init scoreboard"""
         self.screen = screen
         self.screen_rect = screen.get_rect()
         self.game_settings = game_settings
         self.stats = stats
-        # score atributes - size, color, font
+        # score atributes: size, color, font
         self.text_color = (255, 255, 255)
         self.font = pygame.font.SysFont(None, 46)
-        # prepare grafical score
+        # prepare score
         self.prepare_score()
 
     def prepare_score(self):
-        """Convert score to grafics component"""
+        """convert score to grafics component"""
         score_str = str(self.stats.score)
         self.score_image = self.font.render(score_str, True, self.text_color, self.game_settings.bg_color)
         self.score_image_rect = self.score_image.get_rect()

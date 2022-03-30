@@ -11,22 +11,22 @@ from ship import Ship
 import game_functions as gf
 
 def run_game():
-    # init game and create display object
+    # init and create objects on display
     pygame.init()
     game_settings = Settings()
     screen = pygame.display.set_mode((game_settings.screen_width, game_settings.screen_height))
     pygame.display.set_caption("Example Game")
-    # game start button
+    # start button
     play_button = Button(game_settings, screen, "Play")
-    # game statistics object
+    # statistics
     stats = GameStats(game_settings)
-    # game scoreboard
+    # scoreboard
     sb = Scoreboard(game_settings, screen, stats)
 
-    # create ship
+    # make ship
     ship = Ship(game_settings, screen)
     bullets = Group()
-    # create alien group
+    # make alien group
     aliens = Group()
     gf.create_fleet(game_settings, screen, ship, aliens)
 

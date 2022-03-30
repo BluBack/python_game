@@ -14,7 +14,7 @@ class Alien(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
-        # set alien position
+        # set aliens position
         self.x = float(self.rect.x)
     def blitme(self):
         """Draw alien at his position"""

@@ -4,16 +4,16 @@ class Button():
         """Init button atributes"""
         self.screen = screen
         self.screen_rect = screen.get_rect()
-        # button atributes - size, color, font
+        # set button atributes: color, size, font
         self.width = 200
         self.height = 50
         self.button_color = (0, 102, 0)
         self.text_color = (255, 255, 255)
         self.font = pygame.font.SysFont(None, 46)
-        # build the button
+        # make the button
         self.rect = pygame.Rect(0, 0, self.width, self.height)
         self.rect.center = self.screen_rect.center
-        # prepare grafical text
+        # prepare message text
         self.prepare_msg(msg)
 
     def prepare_msg(self, msg):

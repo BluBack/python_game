@@ -7,11 +7,11 @@ class Bullet(Sprite):
         """Create bullet object at ship position"""
         super().__init__()
         self.screen = screen
-        # create bullet
+        # create a bullet
         self.rect = pygame.Rect(0, 0, game_setting.bullet_width, game_setting.bullet_height)
         self.rect.centerx = ship.rect.centerx
         self.rect.top = ship.rect.top
-        # bullet position
+        # set bullet position
         self.y = float(self.rect.y)
         # bullet settings
         self.color = game_setting.bullet_color
